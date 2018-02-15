@@ -8,6 +8,7 @@
 
 # dependencies
 /node_modules
+/angular-ui/node_modules
 /john-swanson/node_modules
 /kafkaesque/node_modules
 /ominous/node_modules

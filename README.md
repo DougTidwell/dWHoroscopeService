@@ -58,12 +58,19 @@ reach your service. Use this command:
 
 Now you should be able to `curl` to the service...but you have to get the
 IP address of the cluster and the randomly-assigned port number for the `istio-ingress` service.
-You can get the IP address with the `bx cs workers Mailbag` command. The port number comes from `kubectl get svc istio-ingress -n istio-system` - look for the port number assigned to port 80.
+You can get the IP address with the `bx cs workers Mailbag` command. The port number
+comes from `kubectl get svc istio-ingress -n istio-system` - look for the port number assigned to
+port 80. (Istio installs itself in the namespace `istio-system`, so you
+have use `-n` to specify the namespace whenever you're looking for Istio components. )
 
 To `curl` the service, type `curl {ip_address}:{port}/horoscope/gemini` to get the horoscope
 for Gemini. If you run this several times with the same sign, you'll get the five different
 versions of the horoscope. If you try it with other signs, you'll obviously get other results
 as well.
+
+_Note:_ If you use a paid cluster, you get both the IP address and the port
+from `kubectl get svc istio-ingress -n istio-system`. A paid cluster has an
+external load balancer, so `istio-ingress` has an external IP address.
 
 ## Installing the Angular 5 front-end
 
