@@ -1,0 +1,107 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: horoscope
+  labels:
+    app: horoscope
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    app: horoscope
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: horoscope-john-swanson
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: horoscope
+        version: john-swanson
+    spec:
+      containers:
+      - name: horoscope
+        image: dougtidwell/horoscope:john-swanson
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: horoscope-kafkaesque
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: horoscope
+        version: kafkaesque
+    spec:
+      containers:
+      - name: horoscope
+        image: dougtidwell/horoscope:kafkaesque
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: horoscope-ominous
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: horoscope
+        version: ominous
+    spec:
+      containers:
+      - name: horoscope
+        image: dougtidwell/horoscope:ominous
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: horoscope-optimistic
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: horoscope
+        version: optimistic
+    spec:
+      containers:
+      - name: horoscope
+        image: dougtidwell/horoscope:optimistic
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: horoscope-planets-in-motion
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: horoscope
+        version: planets-in-motion
+    spec:
+      containers:
+      - name: horoscope
+        image: dougtidwell/horoscope:planets-in-motion
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

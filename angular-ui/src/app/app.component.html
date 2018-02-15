@@ -1,0 +1,44 @@
+<div style="text-align:center; font-size: 200%; margin: 20px;">
+  <span class="blue" style="font-weight: bold;">developerWorks</span> horoscope service
+</div>
+<div>
+<div style="text-align:center;">
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Aries'; getHoroscope('aries')">♈</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Taurus'; getHoroscope('taurus');">♉</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Gemini'; getHoroscope('gemini');">♊</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Cancer'; getHoroscope('cancer');">♋</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Leo'; getHoroscope('leo');">♌</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Virgo'; getHoroscope('virgo');">♍</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Libra'; getHoroscope('libra');">♎</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Scorpio'; getHoroscope('scorpio');">♏</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Sagittarius'; getHoroscope('sagittarius');">♐</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Capricorn'; getHoroscope('capricorn');">♑</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Aquarius'; getHoroscope('aquarius');">♒</span>
+  <span style="font-size: 400%;"
+    (click)="currentSign = 'Pisces'; getHoroscope('pisces');">♓</span>
+</div>
+<div style="border: #00aed1 5px solid;
+            margin-left: 100px; margin-right: 100px;
+            margin-top: 25px; padding: 15px;"
+     *ngIf="horoscope != null && horoscope != undefined">
+  <div style="font-size: 150%;">
+    Today's horoscope for
+    <span class="blue" style="font-weight: bold;">{{ currentSign }}</span>, provided by the
+    <span class="blue" style="font-weight: bold;">{{horoscope.serviceName}}</span> service:
+  </div>
+  <div style="font-size: 200%;">
+    {{horoscope.horoscopeText}}
+  </div>
+</div>
+</div>
