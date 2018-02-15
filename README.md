@@ -2,7 +2,7 @@
 
 ## About this project
 
-This code is a companion to the [Intro to Istio video] from the
+This code is a companion to the [Intro to Istio video](https://developer.ibm.com/tv/introduction-istio-service-mesh/) from the
 [developerWorks Mailbag](https://developer.ibm.com/tv/dwmailbag/) series.
 You can find the basics of the project here, but the video is your source for complete guidance and
 a full explanation of what you'll do here.
