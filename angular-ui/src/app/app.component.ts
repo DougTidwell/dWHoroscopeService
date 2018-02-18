@@ -9,6 +9,7 @@ import { HoroscopeService } from './horoscope.service';
 })
 export class AppComponent {
   constructor(private _horoscopeService: HoroscopeService) {};
+  currentSign: string;
 
   horoscope: Horoscope;
 

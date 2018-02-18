@@ -12,7 +12,14 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/`
+directory. If you want to deploy the app to a web server, use `ng build --prod
+--build-optimizer`.
+If you're doing to deploy the app anywhere other than the root directory
+of your server, add the `--base-href=./` argument - that tells the `index.html`
+file to look in
+the current directory for all of its dependencies. (Which should work...if it
+doesn't, try setting the path explicitly, as in `--base-href=./horoscope`.)
 
 ## Running unit tests
 
